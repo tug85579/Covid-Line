@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart','line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Infections', 'Deaths'],
+          ['1',  1478,      14],
+          ['2',  1852,      14],
+          ['3',  2284,       14],
+            ['4',  2610,       24],
+            ['5',  3135,       28],
+            ['6',  3611,       28],
+            ['7',  4012,       58],
+            ['8',  4456,       86],
+            ['9',  5029,       86],
+            ['10',  5521,       110],
+            ['11',  6022,       130],
+            ['12',  6352,       128],
+            ['13',  6810,       127],
+            ['14',  7130,       206],
+            ['15',  7441,       222],
+            ['16',  8045,       264],
+            ['17',  8563,       298],
+            ['18',  9014,       342],
+            ['19',  9214,       365],
+            ['20',  9553,       370],
+            ['21',  10028,       394],
+            ['22',  10643,       419],
+            ['23',  11226,       443],
+            ['24',  11877,       449],
+            ['25',  12329,       466],
+            ['26',  12566,       472]
+        ]);
+
+        var options = {
+          title: "Philadelphia COVID-19 April 2020",
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 1500px; height: 600px"></div>
+  </body>
+</html>
